@@ -1,47 +1,47 @@
-# Company Research Template
+# Investor/Firm Research Template
 
-Use this structure when saving research to `companies/<company-slug>.md`.
+Use this structure when saving research to `companies/<firm-slug>.md`.
 
 ---
 
-## Company Overview
+## Firm Overview
 
 * **Name:**
 * **Website:**
-* **Industry:**
+* **Type:** (VC / Angel Syndicate / Accelerator / Grant / Corporate Lab)
 * **Location(s):**
-* **Size:**
-* **Products / Technical Work:**
+* **Investment Thesis:**
+* **Focus Sectors:**
 
-## Hiring Signals
+## Investment Activity
 
-* **Careers page:**
-* **Current openings (relevant):**
-* **Recent hiring posts:**
-* **Evidence of entry-level hiring:**
+* **Active Funds / Programs:**
+* **Typical Stage:** (Pre-seed / Seed / Series A / etc.)
+* **Check Size:**
+* **Recent Relevant Investments:** (Any in our space?)
 
 ## Contact Analysis
 
 * **Person:**
-* **Title/Role:**
-* **Relevance to hiring:** (CTO / Recruiter / Eng Manager / etc.)
+* **Title/Role:** (Partner / Principal / Director / Alumni / EIR)
+* **Relevance to our startup:** (Sector focus, board seats, past investments)
 * **Contact priority tier:** (1–5 from AGENTS.md)
 
 ## Fit Assessment
 
-* **Target role category:**
-* **Strongest technical overlap:**
-* **Strongest achievement to mention:**
+* **Sector Fit:**
+* **Stage Fit:**
+* **Strongest overlap with our startup:**
 * **Fit score:** /100
-  * Technical fit: /30
-  * Role/fresher fit: /25
-  * Company relevance: /15
+  * Investment thesis / sector fit: /30
+  * Stage fit: /25
+  * Fund/program relevance: /15
   * Contact relevance: /15
-  * Location fit: /10
+  * Geography fit: /10
   * Other: /5
 
 ## Recommended Outreach Angle
 
-* **Tone:**
-* **Emphasis:**
-* **Key point:**
+* **Ask:** (Funding / Mentorship / Intro / Program Entry)
+* **Tone:** (Founder-to-investor)
+* **Key hook:** (Which startup metric/milestone to lead with)

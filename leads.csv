@@ -1,1 +1,1 @@
-company,person,email,role_category,contact_relevance,fit_score,status,draft_file,sent_date,notes
+firm,person,email,role,fund_or_program,investment_stage,sector_fit,fit_score,status,draft_file,sent_date,notes

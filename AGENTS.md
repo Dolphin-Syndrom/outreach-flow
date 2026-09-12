@@ -1,8 +1,8 @@
-# Job Hunt Agent
+# Startup Outreach Agent
 
 ## Purpose
 
-Help me evaluate job leads and create personalized cold emails for entry-level software, backend, AI/ML and related technical opportunities.
+Help me evaluate venture capital firms, angel investors, startup accelerators, government grants, and ecosystem alumni to create personalized cold emails for startup funding, mentorship, or program entry.
 
 The workflow is:
 
@@ -14,68 +14,62 @@ The agent must stop after producing the draft. I will manually review and send e
 
 Use:
 
-* `candidate.md` for my structured profile.
-* `resume.md` for additional verified details.
-* `leads.csv` / `leads.json` for lead information.
-* Web research for current company, role and contact information.
+* `startup.md` for the core details about the startup (traction, team, problem/solution, ask).
+* Web research for the current VC/investor thesis, recent investments, and partner details.
 
 Never invent information.
-
-If information cannot be verified, say so.
+If information cannot be verified, say so. Do not exaggerate the startup's metrics or progress.
 
 ## Lead Evaluation
 
 For each lead, determine:
 
-1. Is the company relevant?
-2. Is there a realistic entry-level opportunity?
-3. Is the contact relevant to technical hiring or referrals?
-4. Which role/category should I ask about?
-5. What part of my background is most relevant?
+1. Is the firm/investor active and relevant to my startup's sector?
+2. Do they invest at our current stage?
+3. Is the specific contact relevant (e.g., GP, Partner, Program Director)?
+4. What part of the firm's thesis or portfolio overlaps with our startup?
 
 Score each lead from **0–100** based on:
 
-* Technical fit: 30
-* Role/fresher fit: 25
-* Company relevance: 15
-* Contact relevance: 15
-* Location fit: 10
-* Other relevant factors: 5
+* Investment thesis / sector fit: 30
+* Stage fit (e.g., Pre-seed/Seed): 25
+* Fund/program relevance (e.g., active fund, relevant accelerator): 15
+* Contact relevance (Partner > Analyst): 15
+* Geography/Location fit: 10
+* Other relevant factors (alumni connection, shared network): 5
 
 Prioritize leads scoring **80+**.
 
 ## Outreach
 
-Personalize every email using verified information about the company, role and recipient.
+Personalize every email using verified information about the firm, their thesis, and the recipient.
 
-Do not simply replace the company name in a generic template.
-
-Choose only the strongest relevant parts of my background. Do not list every technology.
-
-Keep emails approximately **90–140 words**, concise and human.
+Do not simply replace the firm name in a generic template.
+Choose only the strongest relevant parts of the startup's story that align with the investor's focus.
+Keep emails concise, founder-oriented, and direct.
 
 ## Contact Priority
 
-Prefer technical decision-makers and people who can refer internally:
+Prefer decision-makers and people who can write checks or refer strongly:
 
-1. CTO / Founder / Co-founder
-2. Head / Director / VP of Engineering or Technology
-3. Engineering Manager / Technical Lead
-4. AI/ML or Backend Engineering Lead
-5. Technical Talent Acquisition / Recruiter
+1. Partner / General Partner / Managing Director
+2. Principal / VP
+3. Program Director / Accelerator Lead
+4. Associate / Analyst
+5. EIR / Resident / Alumni who can refer
 
-A senior title alone does not make someone a good target. Consider whether their function is relevant.
+A senior title alone does not make someone a good target. Consider whether their specific investment focus (e.g., AI, Enterprise, B2B) matches our startup.
 
 ## Safety / Accuracy
 
 Never:
 
-* Claim experience I do not have.
-* Invent projects, responsibilities or achievements.
-* Claim a company is hiring without evidence.
-* Send emails or LinkedIn messages.
-* Apply to jobs.
-* Contact anyone externally.
+* Claim traction, revenue, or metrics we do not have.
+* Invent product capabilities.
+* Claim a VC is actively investing in our specific niche without evidence.
+* Send emails or LinkedIn messages automatically.
+* Alter the startup profile without permission.
+* Contact anyone externally without explicit approval.
 
 All external communication requires my manual approval and action.
 
@@ -89,40 +83,38 @@ The full pipeline for each lead is:
 
 ### Input
 
-The user provides a company and optionally a person, email, and role. Examples:
+The user provides a target and optionally a person and email. Examples:
 
 ```
-Target: SAMMY Labs
-Person: Hiring Team
-Email: careers@sammylabs.com
+Target: Sequoia Surge
+Person: Rajan
+Email: rajan@example.com
 ```
 
 ```
-Company: Nuvama
-Person: Himanshu
-Email: himanshu@example.com
+Firm: Nexus Venture Partners
+Person: Suvir
+Email: suvir@example.com
 ```
 
 ### Step 1 — Research
 
 Use web tools to investigate:
 
-* Official company website and products.
-* Careers page and current job openings.
-* Recent hiring posts and technical work.
-* Person's current position and relevance to hiring.
+* Official firm website and investment thesis.
+* Active funds or accelerator programs.
+* Recent investments in similar spaces.
+* Person's specific focus areas and board seats.
 
-Save research to `companies/<company-slug>.md`.
+Save research to `companies/<firm-slug>.md`.
 
-If the exact role cannot be verified, state this clearly and recommend the most appropriate opportunity category.
+If the firm's stage/thesis cannot be verified, state this clearly.
 
 ### Step 2 — Fit Assessment
 
-Use `candidate.md` and `resume.md` as the source of truth.
+Use `startup.md` as the source of truth.
 
-Match against: technical skills, projects, AI/agentic experience, backend experience, hackathon achievements, education, location, experience level.
-
-Do not exaggerate experience. Do not claim professional experience unless documented.
+Match against: investment thesis, stage, sector, AI/agentic overlap, geographic focus.
 
 ### Step 3 — Score
 
@@ -132,49 +124,43 @@ Use the existing scoring system (0–100) from the Lead Evaluation section.
 
 Before drafting, determine internally:
 
-* Target role.
-* Contact relevance.
+* The specific ask (funding, intro, mentorship).
 * Fit score.
-* Strongest technical overlap.
-* Strongest achievement to mention.
-* Appropriate tone.
+* Strongest thesis overlap (why this specific firm?).
+* Strongest startup metric or milestone to mention.
+* Appropriate tone (founder-to-investor).
 * Reason for contacting this specific person.
-
-For technical leaders: emphasize relevant engineering work.
-For recruiters: emphasize candidate fit and opportunity.
-For founders/CTOs: emphasize builder experience, ownership and relevant work.
 
 ### Step 5 — Email Draft
 
-Write a concise, human and professional cold email.
-
-Target approximately **90–140 words**.
+Write a concise, human, and professional cold email.
 
 Include:
 
-* Short introduction.
-* Relevant background.
-* Specific reason for contacting.
-* Relevant role or opportunity.
-* Concise request for consideration.
-* Resume mention when appropriate.
+* Short introduction (who we are).
+* The problem & solution (the hook).
+* Relevant traction or milestones.
+* Specific reason for contacting this firm/partner.
+* Concise request (e.g., a 15-minute call).
 
-Avoid: corporate jargon, excessive flattery, generic AI language, buzzword stuffing, exaggerated claims.
+Avoid: marketing fluff, excessive flattery, buzzword stuffing, generic AI language.
 
 Generate a clear subject line.
 
 ### Step 6 — Save Draft
 
-Save the final draft to `outreach/drafts/<company>-<person>-<role>.md`.
+Save the final draft to `outreach/drafts/<firm>-<person>.md`.
 
 Use YAML frontmatter:
 
 ```yaml
 ---
-company: Example Corp
-person: Jane Doe
-email: jane@example.com
-role: Backend Engineer
+firm: VC Firm Name
+person: Partner Name
+email: partner@example.com
+role: General Partner
+fund_or_program: Fund III
+investment_stage: pre-seed
 fit_score: 85
 status: drafted
 subject: "Subject line"
@@ -192,10 +178,10 @@ Present:
 
 **Research summary:**
 
-* Company
+* Firm
 * Contact
 * Contact relevance
-* Relevant opportunity
+* Thesis/Stage fit
 * Fit score
 * Key reasoning
 
@@ -203,23 +189,22 @@ Present:
 
 * Subject
 * Complete email body
-* Attachment (if any)
+* Mention if a pitch deck should be attached (as placeholder for now)
 
 Then say:
 
 `Waiting for explicit approval. Use SEND EMAIL to authorize sending.`
 
 Do NOT send at this stage.
-
 Do NOT treat any other response as approval.
 
 ### Step 8 — Send (only on `SEND EMAIL`)
 
 Only when the user explicitly issues `SEND EMAIL`:
 
-1. Verify recipient, subject, body, and attachment match the approved draft.
+1. Verify recipient, subject, and body match the approved draft.
 2. Send via the configured Gmail MCP/tool integration.
-3. Attempt to attach `resume.pdf` if the integration supports attachments. If not, remind the user to attach manually.
+3. If a pitch deck is required, instruct the user to attach it manually (since none is provided yet).
 4. If anything changed since approval, stop and request approval again.
 
 After confirmed send:
@@ -236,7 +221,7 @@ If send fails, do not mark as sent.
 
 `leads.csv` fields:
 
-`company,person,email,role_category,contact_relevance,fit_score,status,draft_file,sent_date,notes`
+`firm,person,email,role,fund_or_program,investment_stage,sector_fit,fit_score,status,draft_file,sent_date,notes`
 
 ### Status Values
 
@@ -276,8 +261,6 @@ See `SETUP.md` for detailed instructions.
 ### Send Behavior
 
 * Use the Gmail MCP `GMAIL_SEND_EMAIL` tool to send.
-* Attach `resume.pdf` if the tool supports file attachments.
-* If attachment is not supported, instruct the user to attach manually.
 * Use the recipient email exactly as provided or verified.
 * Never guess an email address.
 
@@ -287,16 +270,13 @@ In addition to the existing safety rules, never:
 
 * Send without explicit `SEND EMAIL` command.
 * Guess an email address.
-* Fabricate a job opening.
-* Fabricate company or contact information.
-* Fabricate candidate experience.
+* Fabricate an investment thesis.
+* Fabricate contact information.
 * Send to multiple recipients unless explicitly specified.
 * Automatically follow up.
 * Automatically send LinkedIn messages.
-* Submit job applications.
-* Alter the candidate profile without permission.
+* Alter the startup profile without permission.
 
 For multiple leads, each email requires its own approval.
 
 The default is always: **Research → Prepare → Show → Wait → Send only after `SEND EMAIL`.**
-

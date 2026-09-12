@@ -1,4 +1,4 @@
-# Outreach Workflow — Setup Guide
+# Startup Outreach Workflow — Setup Guide
 
 ## Prerequisites
 
@@ -34,32 +34,29 @@ You should see `composio_gmail` listed and connected.
 
 Once configured, the agent can send emails through OpenCode using the Composio Gmail tools. The workflow is:
 
-1. You provide a target company and contact.
-2. The agent researches, evaluates fit, and drafts an email.
+1. You provide a target VC firm, accelerator, or investor.
+2. The agent researches their thesis, evaluates fit against your `startup.md`, and drafts an email.
 3. The agent saves the draft and presents it for review.
 4. You review and say `SEND EMAIL` to authorize.
 5. The agent sends via the Gmail MCP tool.
 
-## Project Structure
+## Project Structure (Startup Branch)
 
 ```
 jobhunt/
-├── AGENTS.md              # Agent rules and workflow
+├── AGENTS.md              # Agent rules and workflow for investors
 ├── SETUP.md               # This file
-├── candidate.md           # Your structured profile
-├── resume.md              # Resume in markdown
-├── resume.pdf             # Resume for attachment
-├── leads.csv              # Lead tracking
-├── companies/             # Company research files
-│   └── <company-slug>.md
+├── startup.md             # Your startup details & metrics
+├── leads.csv              # Investor lead tracking
+├── companies/             # VC/Firm research files
+│   └── <firm-slug>.md
 └── outreach/
     └── drafts/            # Email drafts
-        └── <company>-<person>-<role>.md
+        └── <firm>-<person>.md
 ```
 
 ## Notes
 
 - All emails require explicit `SEND EMAIL` approval before sending.
 - The agent never sends automatically or guesses email addresses.
-- Resume attachment depends on Composio Gmail tool support.
-- If attachment is not supported, the agent will remind you to attach manually.
+- If you intend to attach a pitch deck or one-pager, you must do so manually through Gmail for now, as no standard file is provided yet.
